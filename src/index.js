@@ -1,6 +1,7 @@
 import _ from 'lodash';
 // import './style.css'; // with css rules enabled in webpack
-import './style2.scss';
+import './assets/scss/main.scss';
+import Icon from './assets/img/github.png';
 
 function component() {
     const element = document.createElement('div');
@@ -9,6 +10,13 @@ function component() {
 
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     element.classList.add('hello');
+
+    // Add the image to our existing div.
+    const myIcon = new Image();
+    myIcon.src = Icon;
+    myIcon.classList.add('sm-icon');
+
+    element.appendChild(myIcon);
 
     return element;
 }

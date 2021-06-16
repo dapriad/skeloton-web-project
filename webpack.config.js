@@ -11,9 +11,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
-        // SASS Rules
         rules: [
             {
+                // CSS Rules
+                //         test: /\.css$/i,
+                //         use: ['style-loader', 'css-loader',],
+                // SASS Rules
                 test: /\.s[ac]ss$/i,
                 use: [
                     'style-loader',
@@ -27,13 +30,10 @@ module.exports = {
                     }
                 ],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ],
-        // CSS RULES
-        // rules: [
-        //     {
-        //         test: /\.css$/i,
-        //         use: ['style-loader', 'css-loader', 'sass-loader'],
-        //     },
-        // ],
     },
 }
