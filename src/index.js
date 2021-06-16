@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import './style.css';
+// import './style.css'; // with css rules enabled in webpack
+import './style2.scss';
 
 function component() {
     const element = document.createElement('div');

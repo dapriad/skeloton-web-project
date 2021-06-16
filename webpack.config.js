@@ -11,11 +11,29 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
+        // SASS Rules
         rules: [
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            // Prefer `dart-sass`
+                            implementation: require.resolve("sass"),
+                        }
+                    }
+                ],
             },
         ],
+        // CSS RULES
+        // rules: [
+        //     {
+        //         test: /\.css$/i,
+        //         use: ['style-loader', 'css-loader', 'sass-loader'],
+        //     },
+        // ],
     },
 }
