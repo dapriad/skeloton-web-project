@@ -13,9 +13,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Output Managment'
+            title: 'Development'
         })
     ],
+    devtool: 'inline-source-map', // For debug mode
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
