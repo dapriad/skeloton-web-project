@@ -1,5 +1,5 @@
 import _ from 'lodash';
-// import './style.css'; // with css rules enabled in webpack
+import './assets/css/main.css'; // with css rules enabled in webpack
 import './assets/scss/main.scss';
 import Icon from './assets/img/github.png';
 

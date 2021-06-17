@@ -13,11 +13,7 @@ module.exports = {
     module: {
         rules: [
             {
-                // CSS Rules
-                //         test: /\.css$/i,
-                //         use: ['style-loader', 'css-loader',],
-                // SASS Rules
-                test: /\.s[ac]ss$/i,
+                test: /\.s?[ac]ss$/i,
                 use: [
                     'style-loader',
                     'css-loader',
