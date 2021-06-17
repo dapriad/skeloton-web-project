@@ -8,8 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: process.env.MODE,
     entry: {
-        index: './src/index.js',
-        print: './src/print.js',
+        index: './src/index.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -18,7 +17,8 @@ module.exports = {
     ],
     devtool: 'inline-source-map', // For debug mode
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     },
     output: {
         filename: '[name].bundle.js',
