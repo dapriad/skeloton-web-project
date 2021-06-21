@@ -36,14 +36,14 @@ module.exports = {
                 test: /\.s?css$/,
                 use: [
                     "style-loader",
-                    MiniCssExtractPlugin.loader,
+                    // MiniCssExtractPlugin.loader,
                     "css-loader",
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            plugins: () => [autoprefixer()],
-                        },
-                    },
+                    // {
+                    //     loader: "postcss-loader",
+                    //     options: {
+                    //         plugins: () => [autoprefixer()],
+                    //     },
+                    // },
                     "sass-loader",
                 ],
             },
