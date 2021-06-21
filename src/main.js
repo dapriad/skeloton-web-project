@@ -1,12 +1,10 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-
-// set id to body for vue
-// let body = document.getElementsByTagName('body')[0];
-// body.id = "app";
+import vuetify from './plugins/vuetify' // path to vuetify export
 
 new Vue({
     router,
+    vuetify,
     render: (h) => h(App),
 }).$mount("#app");

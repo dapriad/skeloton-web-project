@@ -5,3 +5,8 @@
     <h1>👋Hello world🌎</h1>
   </div>
 </template>
+
+<style lang="sass" scoped>
+.logo
+  width: 200px
+</style>

@@ -1,46 +1,58 @@
 <template>
-  <div id="app">
-    <div class="nav">
-      <router-link to="/">Home</router-link>|<router-link to="/about"
-        >About</router-link
-      >
-    </div>
-    <router-view />
-  </div>
+  <!-- App.vue -->
+
+  <v-app>
+    <v-app-bar app>
+      <v-app-bar-nav-icon>
+        <img
+          src="./assets/Fakelogo.png"
+          alt="logo of adidas 3 stripes plus name"
+        />
+      </v-app-bar-nav-icon>
+      <v-toolbar-title>Adidas</v-toolbar-title>
+    </v-app-bar>
+
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+<script>
+export default {
+  data: () => ({
+    links: ["Dashboard", "Messages", "Profile", "Updates"],
+  }),
+  created() {
+    console.log(this.$vuetify.application); // 56
+  },
+};
+</script>
 
-// :root {
-//   --font: Roboto, sans-serif;
-//   --textColor: #374961;
-//   --linkActiveColor: #41b783;
-// }
+<style lang="sass" scoped>
+// styles/generic/_index.scss
 
-// #app {
-//   font-family: var(--font);
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: var(--textColor);
+// Generic styling for bare HTML elements (like H1, A, etc.).
+// These come with default styling from the browser so that
+// we can redefine them here.
+@import './reset.scss'
 
-//   .logo {
-//     width: 20%;
-//   }
-// }
+@import './animations.scss'
 
-// .nav {
-//   padding: 30px 0 100px 0;
+@import './colors.scss'
 
-//   a {
-//     font-weight: 500;
-//     color: var(--textColor);
-//     margin: 0 5px;
-//   }
+@import './elevation.scss'
 
-//   a.router-link-exact-active {
-//     color: var(--linkActiveColor);
-//   }
-// }
+@import './transitions.scss'
+.title-logo
+  height: 30px
 </style>

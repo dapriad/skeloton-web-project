@@ -7,6 +7,7 @@ const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { VuetifyLoaderPlugin } = require('vuetify-loader')
 
 module.exports = {
     mode: process.env.MODE,
@@ -24,6 +25,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin(),
         new CleanWebpackPlugin(),
+        new VuetifyLoaderPlugin(),
     ],
     devtool: 'inline-source-map', // For debug mode
     devServer: {
@@ -33,18 +35,25 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.s?css$/,
+                test: /\.s(c|a)ss$/,
                 use: [
-                    "style-loader",
-                    // MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    // {
-                    //     loader: "postcss-loader",
-                    //     options: {
-                    //         plugins: () => [autoprefixer()],
-                    //     },
-                    // },
-                    "sass-loader",
+                    'vue-style-loader',
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        // Requires sass-loader@^7.0.0
+                        options: {
+                            implementation: require('sass'),
+                            indentedSyntax: true // optional
+                        },
+                        // Requires >= sass-loader@^8.0.0
+                        options: {
+                            implementation: require('sass'),
+                            sassOptions: {
+                                indentedSyntax: true // optional
+                            },
+                        },
+                    },
                 ],
             },
             {
